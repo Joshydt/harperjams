@@ -1,4 +1,4 @@
-var express       = require('express');
+﻿var express       = require('express');
 var bodyParser    = require('body-parser');
 var request       = require('request');
 var dotenv        = require('dotenv');
@@ -70,7 +70,7 @@ app.post('/store', function(req, res) {
         .then(function(data) {
           var results = data.body.tracks.items;
           if (results.length === 0) {
-            return res.send('Could not find that track.');
+            return res.send('¯\_(ツ)_/¯ Could not find that track.');
           }
           var track = results[0];
           spotifyApi.addTracksToPlaylist(process.env.SPOTIFY_USERNAME, process.env.SPOTIFY_PLAYLIST_ID, ['spotify:track:' + track.id])
